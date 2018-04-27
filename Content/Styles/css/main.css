@@ -1,0 +1,165 @@
+.DayLink-Hover {
+  position: relative;
+  top: -6px;
+  left: -6px;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+}
+.DayLink-Day {
+  cursor: pointer;
+  font-size: 18pt;
+  margin-top: 6px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+}
+.Calendar {
+  width: 238px;
+  height: 265px;
+  background: rgba(255, 255, 255, 0.514);
+  padding: 5px;
+}
+.Calendar .Calendar-DateHandler {
+  margin: 1px 0;
+}
+.Calendar .Calendar-DateHandler div {
+  display: inline-block;
+}
+.Calendar .Calendar-DateHandler .Calendar-DateHandler-Select {
+  margin: 2px 2.5px;
+  border-radius: 3px;
+  border-color: #a19e9e;
+  text-align: center;
+  text-align-last: center;
+  color: black;
+  width: 98px;
+  height: 31px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+.Calendar .Calendar-DateHandler .Calendar-Close {
+  position: relative;
+  bottom: -3px;
+  cursor: pointer;
+  font-size: 18pt;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  background: white;
+  width: 29px;
+  height: 29px;
+  border: solid 1px #a19e9e;
+  border-radius: 3px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+.Calendar .Calendar-DayBlock {
+  background: white;
+  margin: 1px;
+  width: 30px;
+  height: 30px;
+  float: left;
+  border-radius: 3px;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink {
+  text-align: center;
+  font-size: 14pt;
+  margin: 3px 5px 5px 5px;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink_not-active {
+  text-align: center;
+  font-size: 14pt;
+  margin: 3px 5px 5px 5px;
+  color: #a19e9e;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink-Hover:hover {
+  position: relative;
+  top: -6px;
+  left: -6px;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: solid 1px red;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink-Hover:hover p {
+  cursor: pointer;
+  font-size: 18pt;
+  margin-top: 6px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  color: red;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink-Hover_not-active:hover {
+  position: relative;
+  top: -6px;
+  left: -6px;
+  background: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  border: solid 1px #f79393;
+}
+.Calendar .Calendar-DayBlock .Calendar-DayLink-Hover_not-active:hover p {
+  cursor: pointer;
+  font-size: 18pt;
+  margin-top: 6px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  user-select: none;
+  color: #f79393;
+}
+.content {
+  padding: 20px 16px;
+  margin: auto;
+  margin-top: 50px;
+  width: 900px;
+}
+.content .Index .Index-InfoTable {
+  border-collapse: collapse;
+}
+.content .Index .Index-InfoTable th,
+.content .Index .Index-InfoTable td {
+  text-align: left;
+}
+.content .Index .Index-InfoTable td {
+  padding-left: 10px;
+}
+.content .Study table {
+  border-collapse: collapse;
+}
+.content .Study table th,
+.content .Study table td {
+  border: 1px solid black;
+  padding: 5px;
+}
+.content .Photoalbum .Photoalbum-Small-Image {
+  display: block;
+  float: left;
+  margin: 10px;
+}
+.content .Photoalbum .Photoalbum-Small-Image img {
+  width: 120px;
+  height: 120px;
+}
+.content .History table {
+  margin-left: 25%;
+  margin-right: 25%;
+}
+.content .History table tr td {
+  border: solid 1px black;
+  text-align: center;
+  padding: 5px;
+}
+.Photoalbum-Big-Image {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  display: inline-block;
+}

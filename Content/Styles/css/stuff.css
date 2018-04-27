@@ -1,0 +1,18 @@
+.background-white {
+  background: white;
+}
+.border-black {
+  border: solid 1px black;
+}
+.border-red {
+  border: solid 1px red;
+}
+.border-black-not-active {
+  border: solid 1px #a19e9e;
+}
+.border-red-not-active {
+  border: solid 1px #f79393;
+}
+.margin-left-100 {
+  margin-left: 100px;
+}

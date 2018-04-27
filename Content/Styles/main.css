@@ -1,0 +1,159 @@
+body {
+    margin: 0;
+}
+
+.colorRed {
+    color: red !important
+}
+
+.colorWhite { 
+    color: white !important
+}
+
+.hover:hover {
+    background-color: #111111;
+}
+
+header {
+    width: 100%;
+    height: 52px;
+    position: fixed;
+    top: 0;
+    background-color: #333333;
+}
+
+.header__menu ul{
+    -webkit-padding-start: 0;
+    width: 900px;
+    list-style-type: none;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: #333333;
+}
+
+.interests-menu {
+    -webkit-padding-start: 0;
+    list-style-type: none;
+    width: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    position: absolute;
+    background-color: #333333;
+    border-radius: 0 0 10px 10px;
+    padding: 0;
+}
+
+.header__menu li {
+    float: left;
+}
+
+.positionRevative {
+    position: relative;
+}
+
+.positionAbsolute {
+    position: absolute;
+}
+
+.positionFixed {
+    position: fixed;
+}
+
+.positionStatic {
+    position: static;
+}
+
+.interests-menu li {}
+
+.interests-menu a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 3px 21px;
+    text-decoration: none;
+}
+
+.interests-menu a:hover {
+    background-color: #111111;
+}
+
+.header__menu a {  
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    text-decoration: none;
+}
+
+.header__menu a:hover {
+    background-color: #111111;
+}
+
+.content {
+    padding: 20px 16px;
+    margin: auto;
+    margin-top: 50px;
+    width: 900px;
+}
+
+footer {
+    border-top: 1px solid #333333;
+
+    padding: 10px 0;
+    text-align: center;
+}
+
+#linkOnPage:before {
+	display: block;
+	content: "";
+	height: 70px;
+	margin: -70px 0 0;
+}
+
+.content-block {
+    width: 900px;
+    border: 1px solid black;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.photoalbum__image {
+    display: block;
+    float: left;
+    margin: 10px;
+}
+
+.photoalbum__image img {
+    width: 120px;
+    height: 120px;
+}   
+
+.form__text-input {
+    width: 300px;
+}
+
+.form__control-buttons {
+    margin-top: 20px;
+    
+}
+
+.form__control-buttons > input {
+    padding: 5px 40px;
+    margin-right: 10px;
+    background-color: #333333;
+    border: 1px solid #737373;
+    color: azure;
+    border-radius: 5px;
+}
+
+.error-input {
+    border: 1px solid red;
+}
+
+.header_clock {
+    top: 0;
+    position: fixed;
+    right: 5%;
+    color: white;
+}
+
