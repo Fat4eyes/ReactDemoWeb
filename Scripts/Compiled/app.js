@@ -1356,7 +1356,7 @@ var Contact = function (_React$Component) {
                     break;
                 }
             }
-            _this.setState({ isValid: isValid });
+            _this.setState({ isValid: validResult });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -1453,8 +1453,8 @@ var Contact = function (_React$Component) {
                     React.createElement(
                         'div',
                         { className: 'form__control-buttons' },
-                        React.createElement('input', { disabled: !this.state.isValid, type: 'submit', value: '\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C' }),
-                        React.createElement('input', { type: 'reset', value: '\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C' })
+                        React.createElement('input', { className: 'btn ' + (this.state.isValid ? 'btn-submit-active' : 'btn-submit-not-active'), disabled: !this.state.isValid, type: 'submit', value: '\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C' }),
+                        React.createElement('input', { className: 'btn btn-submit-active', type: 'reset', value: '\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C' })
                     )
                 )
             );
@@ -1964,7 +1964,8 @@ var Test = function (_React$Component) {
             phone: "",
             testOne: "",
             testTwo: "",
-            testThree: ""
+            testThree: "",
+            isValid: false
         }, _this.validateState = {
             fullNameIsValid: "",
             groupIsValid: "",
@@ -1992,6 +1993,14 @@ var Test = function (_React$Component) {
                 console.log(name + "IsValid = " + isValid);
                 _this.validateState[name + "IsValid"] = isValid;
             }
+            var validResult = true;
+            for (state in _this.validateState) {
+                if (!_this.validateState[state]) {
+                    validResult = false;
+                    break;
+                }
+            }
+            _this.setState({ isValid: validResult });
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -2090,8 +2099,8 @@ var Test = function (_React$Component) {
                     React.createElement(
                         "div",
                         { className: "form__control-buttons" },
-                        React.createElement(Input, { attributes: { type: "submit", value: "Отправить" } }),
-                        React.createElement(Input, { attributes: { type: "reset", value: "Очистить" } })
+                        React.createElement("input", { className: "btn " + (this.state.isValid ? 'btn-submit-active' : 'btn-submit-not-active'), disabled: !this.state.isValid, type: "submit", value: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C" }),
+                        React.createElement("input", { className: "btn btn-submit-active", type: "reset", value: "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u044C" })
                     )
                 )
             );
