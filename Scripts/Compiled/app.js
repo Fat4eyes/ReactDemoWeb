@@ -1791,13 +1791,22 @@ var Photoalbum = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Photoalbum.__proto__ || Object.getPrototypeOf(Photoalbum)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
-            show: false,
-            src: ''
-        }, _this.handleClickOnSmallImage = function (src) {
-            return _this.setState({ src: src, show: true });
-        }, _this.handleClickOnBigImage = function (src) {
-            return _this.setState({ show: false });
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = Photoalbum.__proto__ || Object.getPrototypeOf(Photoalbum)).call.apply(_ref, [this].concat(args))), _this), _this.bigImageIndex = 0, _this.handleClickOnSmallImage = function (index) {
+            console.log(index);
+
+            bigImageIndex = index;
+
+            $("#content").on("click", ".Photoalbum-Big-Image", function () {
+                $(this).parent().parent().remove();
+            }).on("click", ".PopUp-Content-Left", function () {
+                $(".Photoalbum-Big-Image").css("background-image", "url(" + fotos[bigImageIndex > 0 ? --bigImageIndex : bigImageIndex] + ")");
+                $(".PopUp-Content-Middle").text(bigImageIndex + 1 + " \u0438\u0437 " + imageCount);
+            }).on("click", ".PopUp-Content-Right", function () {
+                $(".Photoalbum-Big-Image").css("background-image", "url(" + fotos[bigImageIndex < imageCount - 1 ? ++bigImageIndex : bigImageIndex] + ")");
+                $(".PopUp-Content-Middle").text(bigImageIndex + 1 + " \u0438\u0437 " + imageCount);
+            });
+
+            $("#content").append("\n            <div class=\"PopUp-Overlay\">\n                <div class=\"PopUp-Content\">\n                    <div class=\"Photoalbum-Big-Image\" style=\"background-image: url(" + fotos[index] + ")\"></div>\n                </div>\n                <div class=\"PopUp-Content-Left\">\u25C4</div>\n                <div class=\"PopUp-Content-Middle\">" + (bigImageIndex + 1) + " \u0438\u0437 " + imageCount + "</div>\n                <div class=\"PopUp-Content-Right\">\u25BA</div>\n            </div>\n        ");
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
 
@@ -1827,7 +1836,7 @@ var Photoalbum = function (_React$Component) {
                                             "div",
                                             { className: "Photoalbum-Small-Image" },
                                             React.createElement("img", { src: image.src, alt: image.title, title: image.title, onClick: function onClick() {
-                                                    return _this2.handleClickOnSmallImage(image.src);
+                                                    return _this2.handleClickOnSmallImage(indexMatrix * rowImageCount + index);
                                                 } }),
                                             React.createElement(
                                                 "h3",
@@ -1840,11 +1849,6 @@ var Photoalbum = function (_React$Component) {
                             );
                         })
                     )
-                ),
-                React.createElement(
-                    Popup,
-                    { show: this.state.show, handleClose: this.handleClickOnBigImage },
-                    React.createElement("div", { className: "Photoalbum-Big-Image", style: { backgroundImage: "url(" + this.state.src + ")" } })
                 )
             );
         }
@@ -1852,6 +1856,26 @@ var Photoalbum = function (_React$Component) {
 
     return Photoalbum;
 }(React.Component);
+
+getNextImage = function getNextImage(url, previous) {
+    var currentImage = url.replace('url(', '').replace(')', '').replace(/\"/gi, "");
+    var index = fotos.indexOf(currentImage).substring(currentImage.lastIndexOf('/') + 1, currentImage.length);
+    if (index != -1) {
+        if (previous) {
+            if (index > 0) {
+                return fotos[index - 1];
+            } else {
+                return fotos[index];
+            }
+        } else {
+            if (index < imageCount - 1) {
+                return fotos[index + 1];
+            } else {
+                return fotos[index];
+            }
+        }
+    }
+};
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }

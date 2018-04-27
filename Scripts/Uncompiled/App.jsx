@@ -1,4 +1,4 @@
-$(function(){
+$(() => {
     localStorage.clear()
     ReactDOM.render(
         <Header />,
@@ -50,4 +50,4 @@ function getCookie(name) {
       "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
     ));
     return matches ? decodeURIComponent(matches[1]) : undefined;
-  }
+}
