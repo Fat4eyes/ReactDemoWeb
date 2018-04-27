@@ -46,7 +46,7 @@ class Contact extends React.Component {
                 break
             }
         }
-        this.setState({isValid: isValid})
+        this.setState({isValid: validResult})
     }
 
     render() {
@@ -139,8 +139,8 @@ class Contact extends React.Component {
                         }}
                     />
                     <div className="form__control-buttons">
-                        <input disabled={!this.state.isValid} type = "submit" value = "Отправить"/>
-                        <input type = "reset" value = "Очистить" />
+                        <input className={`btn ${this.state.isValid?'btn-submit-active':'btn-submit-not-active'}`} disabled={!this.state.isValid} type = "submit" value = "Отправить"/>
+                        <input className={`btn btn-submit-active`} type = "reset" value = "Очистить" />
                     </div>
                 </form>
             </div>

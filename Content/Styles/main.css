@@ -137,15 +137,6 @@ footer {
     
 }
 
-.form__control-buttons > input {
-    padding: 5px 40px;
-    margin-right: 10px;
-    background-color: #333333;
-    border: 1px solid #737373;
-    color: azure;
-    border-radius: 5px;
-}
-
 .error-input {
     border: 1px solid red;
 }

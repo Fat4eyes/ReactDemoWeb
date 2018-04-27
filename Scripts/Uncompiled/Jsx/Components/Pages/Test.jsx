@@ -5,7 +5,8 @@ class Test extends React.Component {
         phone: "",
         testOne: "",
         testTwo: "",
-        testThree: ""
+        testThree: "",
+        isValid: false
     }
 
     validateState = {
@@ -45,6 +46,14 @@ class Test extends React.Component {
             console.log(`${name}IsValid = ${isValid}`);
             this.validateState[`${name}IsValid`] = isValid;
         }
+        let validResult = true;
+        for(state in this.validateState) {
+            if(!this.validateState[state]) {
+                validResult = false;
+                break
+            }
+        }
+        this.setState({isValid: validResult})
     }
 
     render() {
@@ -140,8 +149,8 @@ class Test extends React.Component {
                         }}
                     />
                     <div className="form__control-buttons">
-                        <Input attributes = {{type : "submit", value : "Отправить" }}/>
-                        <Input attributes = {{type : "reset", value : "Очистить" }}/>
+                        <input className={`btn ${this.state.isValid?'btn-submit-active':'btn-submit-not-active'}`} disabled={!this.state.isValid} type = "submit" value = "Отправить"/>
+                        <input className={`btn btn-submit-active`} type = "reset" value = "Очистить" />
                     </div>
                 </form>
             </div>
